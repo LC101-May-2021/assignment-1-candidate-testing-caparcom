@@ -5,7 +5,7 @@ const input = require('readline-sync');
 let candidateName = {firstName : "", lastName : ""} ;
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
 let question = "";
-let correctAnswer = "Sally Ride";
+let correctAnswer = "";
 let candidateAnswer = "";
 let questions = ['1. Who was the first American woman in space?', '2. True or false: 5 kilometer == 5000 meters?',	
 '3. (5 + 3)/2 * 10 = ?', "4. Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2?", 	
@@ -38,7 +38,7 @@ function gradeQuiz(candidateAnswers) {
       if (candidateAnswers[i] === correctAnswers[i]) {
       console.log("CORRECT");
       numCorrect += 1;
-      } else if (candidateAnswers.toString().toLowerCase()===correctAnswers.toString().toLowerCase()) {
+      } else if (candidateAnswers[i].toString().toLowerCase()===correctAnswers[i].toString().toLowerCase()) {
        console.log("CORRECT");
        numCorrect += 1;
       }  /*else if (candidateAnswers.toString().toUpperCase()===correctAnswers.toString().toUpperCase()) {
@@ -53,9 +53,9 @@ function gradeQuiz(candidateAnswers) {
   
   let grade = (numCorrect / total * 100);
   if (grade >= 80) {
-    console.log(`Congratulations! You've passed the assessment with a final score of ${grade}%`);
+    console.log(`\n\n\nCongratulations! You've passed the assessment with a final score of ${grade}%`);
   } else {
-      console.log(` We regret to inform you that a score of ${grade}% does not constitute as passing. `);
+      console.log(` \n\n\nWe regret to inform you that a score of ${grade}% does not constitute as passing. `);
     }
 
 }
